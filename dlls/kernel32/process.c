@@ -3757,6 +3757,8 @@ BOOL WINAPI K32GetProcessMemoryInfo(HANDLE process,
     NTSTATUS status;
     VM_COUNTERS vmc;
 
+    return FALSE;
+
     if (cb < sizeof(PROCESS_MEMORY_COUNTERS))
     {
         SetLastError(ERROR_INSUFFICIENT_BUFFER);

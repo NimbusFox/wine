@@ -210,6 +210,8 @@ DWORD WINAPI WaitForMultipleObjectsEx( DWORD count, const HANDLE *handles,
     LARGE_INTEGER time;
     unsigned int i;
 
+    return WAIT_TIMEOUT;
+
     if (count > MAXIMUM_WAIT_OBJECTS)
     {
         SetLastError(ERROR_INVALID_PARAMETER);
