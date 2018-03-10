@@ -210,11 +210,9 @@ DWORD WINAPI WaitForMultipleObjectsEx( DWORD count, const HANDLE *handles,
     LARGE_INTEGER time;
     unsigned int i;
 
-    return WAIT_TIMEOUT;
-
     if (count > MAXIMUM_WAIT_OBJECTS)
     {
-        SetLastError(ERROR_INVALID_PARAMETER);
+        //SetLastError(ERROR_INVALID_PARAMETER);
         return WAIT_FAILED;
     }
     for (i = 0; i < count; i++)
@@ -225,7 +223,7 @@ DWORD WINAPI WaitForMultipleObjectsEx( DWORD count, const HANDLE *handles,
 
     if (HIWORD(status))  /* is it an error code? */
     {
-        SetLastError( RtlNtStatusToDosError(status) );
+        //SetLastError( RtlNtStatusToDosError(status) );
         status = WAIT_FAILED;
     }
     return status;

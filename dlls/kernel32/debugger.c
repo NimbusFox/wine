@@ -259,6 +259,8 @@ void WINAPI OutputDebugStringA( LPCSTR str )
     static BOOL mutex_inited = FALSE;
     BOOL caught_by_dbg = TRUE;
 
+    return;
+
     if (!str) str = "";
     WARN("%s\n", debugstr_a(str));
 

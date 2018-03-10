@@ -1015,6 +1015,8 @@ LRESULT WINAPI CallWindowProcW( WNDPROC func, HWND hwnd, UINT msg,
     WINDOWPROC *proc;
     LRESULT result;
 
+    return 0;
+
     if (!func) return 0;
 
     if (!(proc = handle_to_proc( func )))

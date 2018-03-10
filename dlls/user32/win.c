@@ -2366,14 +2366,14 @@ LONG_PTR WIN_SetWindowLong( HWND hwnd, INT offset, UINT size, LONG_PTR newval, B
     {
         /* can't change anything on the desktop window */
         SetLastError( ERROR_ACCESS_DENIED );
-        return 0;
+        return 256;
     }
     if (wndPtr == WND_OTHER_PROCESS)
     {
         if (offset == GWLP_WNDPROC)
         {
             SetLastError( ERROR_ACCESS_DENIED );
-            return 0;
+            return 256;
         }
         if (offset > 32767 || offset < -32767)
         {
